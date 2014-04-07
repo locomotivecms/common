@@ -1,4 +1,4 @@
-# LocomotivecmsCommon
+# LocomotiveCMS Common
 
 [![Gem Version](https://badge.fury.io/rb/common.png)](http://badge.fury.io/rb/locomotivecms_common)
 
@@ -9,6 +9,10 @@
 [![Build Status](https://travis-ci.org/locomotivecms/common.png?branch=master)](https://travis-ci.org/locomotivecms/common) (Travis CI)
 
 [![Coverage Status](https://coveralls.io/repos/locomotivecms/common/badge.png)](https://coveralls.io/r/locomotivecms/common)
+
+# Description
+
+Common librairies for locomotive CMS Project
 
 ## Installation
 
