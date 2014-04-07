@@ -4,7 +4,7 @@ describe Locomotive::Common::DefaultException do
 
   specify do
     expect do
-      raise DefaultException.new
+      raise Locomotive::Common::DefaultException.new
     end.to raise_error(DefaultException)
   end
 

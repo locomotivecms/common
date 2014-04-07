@@ -54,8 +54,8 @@ module Locomotive
       end
     end
 
-    class MounterException < DefaultException() ; end
-    class GeneratorException < DefaultException() ; end
+    class MounterException < DefaultException; end
+    class GeneratorException < DefaultException; end
 
   end
 end
