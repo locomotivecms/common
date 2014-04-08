@@ -4,10 +4,10 @@ module Locomotive
 
       class Notifier
         def initialize(exception)
-          exception.notifier.extend(UiDevNull)
+          exception.notifier.extend(SilentLogger)
         end
 
-        module UiWithBeep
+        module SilentLogger
           def fatal(*)
             nil # Locomotive::Steam::Logger.fatal args.first
           end
