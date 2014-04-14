@@ -1,17 +1,19 @@
 module Locomotive
   module Common
 
-    class Notifier
-      def method_missing method, *args
-        nil
-      end
-    end
+    # class Notifier
+    #
+    #   def method_missing method, *args
+    #     nil
+    #   end
+    # end
 
     class DefaultException < ::Exception
       attr_accessor :notifier
 
       def initialize(message = nil, parent_exception = nil)
-        self.notifier = Locomotive::Common::Notifier.new
+        # self.notifier = Locomotive::Common::Notifier.new
+        self.notifier = Locomotive::Common::Logger.setup('log/locomotivecms.log')
         self.log_backtrace(parent_exception) if parent_exception
         super(message)
         init_plugins
@@ -19,7 +21,7 @@ module Locomotive
 
       def init_plugins
         @plugins = []
-        Locomotive::Common::Plugins.constants.each do |name|
+        ::Plugins.constants.each do |name|
           @plugins << ::Plugins.const_get(name).new(self)
         end
       end
