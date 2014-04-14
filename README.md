@@ -28,6 +28,12 @@ Or install it yourself as:
 
     $ gem install locomotivecms_common
 
+## Configuration
+
+    Locomotive::Common.configure do |config|
+      config.notifier = Locomotive::Common::Logger.setup(File.join(File.expand_path(File.dirname(__FILE__)), 'log', 'locomotivecms.log'))
+    end
+
 ## Usage
 
 TODO: Write usage instructions here

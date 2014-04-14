@@ -1,0 +1,4 @@
+.bundle
+.ruby-*
+
+*.gem

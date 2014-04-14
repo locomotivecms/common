@@ -1,28 +1,25 @@
+require 'pry'
+
 module Locomotive
   module Common
-
-    # class Notifier
-    #
-    #   def method_missing method, *args
-    #     nil
-    #   end
-    # end
 
     class DefaultException < ::Exception
       attr_accessor :notifier
 
       def initialize(message = nil, parent_exception = nil)
-        # self.notifier = Locomotive::Common::Notifier.new
-        self.notifier = Locomotive::Common::Logger.setup('log/locomotivecms.log')
+        self.notifier = Locomotive::Common.configuration.notifier
         self.log_backtrace(parent_exception) if parent_exception
         super(message)
         init_plugins
       end
 
       def init_plugins
-        @plugins = []
-        ::Plugins.constants.each do |name|
-          @plugins << ::Plugins.const_get(name).new(self)
+        begin
+          @plugins = []
+          ::Plugins.constants.each do |name|
+            @plugins << ::Plugins.const_get(name).new(self)
+          end
+        rescue NameError
         end
       end
 
