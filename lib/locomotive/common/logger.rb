@@ -11,16 +11,22 @@ module Locomotive
 
       # Setup the single instance of the ruby logger.
       #
-      # @param [ String ] path The path to the log file (default: log/locomotivecms.log)
-      # @param [ Boolean ] stdout Instead of having a file, log to the standard output
+      # @param[ optional ] [ String ] path The path to the log file, full path with log file name
+      # Sample /home/locomotivecms/log/server.log (default: nil => Stdout)
       #
-      def setup path
+      def setup log_file_full_path=nil
         require 'logger'
 
-        out = path ? logfile_path(path) : STDOUT
+        output = begin
+          if log_file_full_path
+            log_file_path log_file_full_path
+          else
+            STDOUT
+          end
+        end
 
-        self.logger = ::Logger.new(out).tap do |log|
-          log.level     = ::Logger::DEBUG
+        self.logger = ::Logger.new(output).tap do |log|
+          log.level = ::Logger::DEBUG
           log.formatter = proc do |severity, datetime, progname, msg|
             "#{msg}\n"
           end
@@ -31,8 +37,13 @@ module Locomotive
         @@instance ||= self.new
       end
 
-      def self.setup path=nil
-        self.instance.setup path
+      def self.setup *args
+        if args.size > 1
+          puts "[DEPRECATION] Logger.setup(path, stdout=false) is deprecated. " \
+            "Please use Logger.setup(log_file_full_path) instead, " \
+            "like: /home/locomotivecms/log/server.log"
+        end
+        self.instance.setup args.first
       end
 
       class << self
@@ -45,12 +56,14 @@ module Locomotive
 
       private
 
-      def logfile_path path
-        File.expand_path(File.join(path)).tap do |_path|
-          FileUtils.mkdir_p(File.dirname(_path))
-        end
+      def log_file_path log_file_full_path
+        if File.directory? log_file_full_path
+          puts "[DEPRECATION] Please use fully log file path like: /home/locomotivecms/log/server.log"
+          File.expand_path(File.join(log_file_full_path, 'log', 'locomotivecms.log'))
+        else
+          log_file_full_path
+        end.tap { |path| FileUtils.mkdir_p(File.dirname(path)) }
       end
-
     end
   end
 end
