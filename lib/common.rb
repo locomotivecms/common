@@ -5,11 +5,6 @@ require_relative 'locomotive/common/notifier'
 
 require_relative 'locomotive/common/configuration'
 
-begin
-  require 'pry'
-rescue LoadError
-end
-
 module Locomotive
   module Common
     class << self
