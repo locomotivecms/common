@@ -6,8 +6,14 @@ require_relative '../lib/common'
 
 class Publish
 
-  def start version, rvm=false
-    system "rvm use #{rvm}"
+  def start
+    # if File.exists? '.ruby-version'
+    #   cmd = <<-CMD
+    #     rvm use `cat .ruby-version`@`cat .ruby-gemset` --create
+    #   CMD
+    #   system cmd
+    # end
+    # exit 1
 
     system "bundle && bundle exec rspec"
     system "gem build locomotivecms_common.gemspec"
@@ -19,10 +25,4 @@ class Publish
 
 end
 
-if ARGV.length != 1 # or !ARGV[0].match(/\d{1,3}.\d{1,3}.\d{1,3}/)
-  puts 'HELP: '
-  puts '$ bin/publish [ruby-2.1.1@common]'
-  exit 0
-end
-
-Publish.new.start ARGV[0]
+Publish.new.start
