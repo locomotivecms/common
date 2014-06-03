@@ -1,3 +1,5 @@
+require 'colorize'
+
 module Locomotive
   module Common
 
