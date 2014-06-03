@@ -1,4 +1,4 @@
-require_relative 'lib/common'
+require_relative 'lib/locomotive/common/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'locomotivecms_common'
