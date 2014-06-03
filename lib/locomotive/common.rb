@@ -1,9 +1,8 @@
-require_relative 'locomotive/common/version'
-require_relative 'locomotive/common/logger'
-require_relative 'locomotive/common/exception'
-require_relative 'locomotive/common/notifier'
-
-require_relative 'locomotive/common/configuration'
+require_relative 'common/version'
+require_relative 'common/logger'
+require_relative 'common/exception'
+require_relative 'common/notifier'
+require_relative 'common/configuration'
 
 module Locomotive
   module Common

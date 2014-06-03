@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 
-require_relative '../lib/common'
+require_relative '../lib/locomotive/common'
 
 RSpec.configure do |config|
   config.filter_run focused: true
