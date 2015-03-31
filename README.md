@@ -1,14 +1,6 @@
 # LocomotiveCMS Common
 
-[![Gem Version](https://badge.fury.io/rb/common.png)](http://badge.fury.io/rb/locomotivecms_common)
-
-[![Code Climate](https://codeclimate.com/github/locomotivecms/common.png)](https://codeclimate.com/github/locomotivecms/common)
-
-[![Dependency Status](https://gemnasium.com/locomotivecms/common.png)](https://gemnasium.com/locomotivecms/common)
-
-[![Build Status](https://travis-ci.org/locomotivecms/common.png?branch=master)](https://travis-ci.org/locomotivecms/common) (Travis CI)
-
-[![Coverage Status](https://coveralls.io/repos/locomotivecms/common/badge.png)](https://coveralls.io/r/locomotivecms/common)
+[![Gem Version](https://badge.fury.io/rb/locomotivecms_common.svg)](http://badge.fury.io/rb/locomotivecms_common) [![Code Climate](https://codeclimate.com/github/locomotivecms/common/badges/gpa.svg)](https://codeclimate.com/github/locomotivecms/common) [![Dependency Status](https://gemnasium.com/locomotivecms/common.svg)](https://gemnasium.com/locomotivecms/common) [![Build Status](https://travis-ci.org/locomotivecms/common.svg?branch=master)](https://travis-ci.org/locomotivecms/common) [![Coverage Status](https://coveralls.io/repos/locomotivecms/common/badge.svg)](https://coveralls.io/r/locomotivecms/common)
 
 # Description
 
