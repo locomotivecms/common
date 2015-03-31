@@ -16,10 +16,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 1.5'
-  spec.add_development_dependency 'rake',    '~> 10.1'
-  spec.add_development_dependency 'rspec',   '~> 2.14'
+  spec.add_development_dependency 'bundler',    '~> 1.5'
+  spec.add_development_dependency 'rake',       '~> 10.1'
 
+  spec.add_dependency 'activesupport',          '~> 4.2.1'
+  spec.add_dependency 'stringex',               '~> 2.5.2'
   spec.add_dependency 'colorize'
+
   spec.required_ruby_version = '~> 2.0'
 end
