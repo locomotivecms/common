@@ -55,7 +55,9 @@ module Locomotive
       class << self
         %w(debug info warn error fatal unknown).each do |name|
           define_method(name) do |message|
-            self.instance.logger.send(name.to_sym, message)
+            if self.instance.logger
+              self.instance.logger.send(name.to_sym, message)
+            end
           end
         end
       end
