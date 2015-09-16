@@ -1,5 +1,6 @@
 require_relative 'common/version'
 require_relative 'common/core_ext'
+require_relative 'common/attr_extras_ext'
 require_relative 'common/logger'
 require_relative 'common/exception'
 require_relative 'common/notifier'

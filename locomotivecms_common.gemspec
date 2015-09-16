@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activesupport',          '~> 4.2.1'
   spec.add_dependency 'stringex',               '~> 2.5.2'
+  spec.add_dependency 'attr_extras',            '~> 4.4.0'
   spec.add_dependency 'colorize'
 
   spec.required_ruby_version = '~> 2.0'
