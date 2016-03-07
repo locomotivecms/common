@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler',    '~> 1.5'
   spec.add_development_dependency 'rake',       '~> 10.1'
 
-  spec.add_dependency 'activesupport',          '~> 4.2.1'
-  spec.add_dependency 'stringex',               '~> 2.5.2'
+  spec.add_dependency 'activesupport',          '~> 4.2.5.2'
+  spec.add_dependency 'stringex',               '~> 2.6.0'
   spec.add_dependency 'attr_extras',            '~> 4.4.0'
   spec.add_dependency 'colorize'
 
