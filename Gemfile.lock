@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    locomotivecms_common (0.0.5)
+    locomotivecms_common (0.1.0)
       activesupport (~> 4.2.5.2)
       attr_extras (~> 4.4.0)
       colorize
