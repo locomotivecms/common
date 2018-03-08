@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'locomotivecms_common'
   spec.version       = Locomotive::Common::VERSION
   spec.authors       = ['Didier Lafforgue', 'Arnaud Sellenet', 'Joel Azemar']
-  spec.email         = ['did@locomotivecms.com', 'arnaud@sellenet.fr', 'joel.azemar@gmail.com']
+  spec.email         = ['didier@nocoffee.fr', 'arnaud@sellenet.fr', 'joel.azemar@gmail.com']
   spec.description   = %q{The LocomotiveCMS Common is a shared libraries package}
   spec.summary       = %q{The LocomotiveCMS Common is a shared libraries package for all LocomotiveCMS dependencies}
   spec.homepage      = 'http://www.locomotivecms.com'
