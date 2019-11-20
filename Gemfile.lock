@@ -30,6 +30,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.2.0)
     minitest (5.13.0)
+    rake (13.0.1)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -63,6 +64,7 @@ PLATFORMS
 DEPENDENCIES
   coveralls (~> 0.8.21)
   locomotivecms_common!
+  rake (~> 13.0.1)
   rspec (~> 3.7.0)
 
 BUNDLED WITH
