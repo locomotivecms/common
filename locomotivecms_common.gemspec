@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'rake',       '~> 13.0.1'
 
-  spec.add_dependency 'activesupport',          '>= 5.1.5', '< 6.0'
+  spec.add_dependency 'activesupport',          '>= 5.1.5', '< 7.0'
   spec.add_dependency 'stringex',               '~> 2.8.2'
   spec.add_dependency 'attr_extras',            '~> 5.2.0'
   spec.add_dependency 'colorize'
