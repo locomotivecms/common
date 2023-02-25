@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 # Big thanks to Tim Ruffles (https://github.com/timruffles)
 # https://gist.github.com/timruffles/2780508
 module HashConverter
   class << self
-
     def to_underscore(hash)
       convert(hash, :underscore)
     end
@@ -23,10 +24,9 @@ module HashConverter
     def convert(obj, *method)
       case obj
       when Hash
-        obj.inject({}) do |h, (k,v)|
+        obj.each_with_object({}) do |(k, v), h|
           v = convert(v, *method)
           h[k.send(*method)] = v
-          h
         end
       when Array
         obj.map { |m| convert(m, *method) }
@@ -34,6 +34,5 @@ module HashConverter
         obj
       end
     end
-
   end
 end

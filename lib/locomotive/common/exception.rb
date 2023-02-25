@@ -1,24 +1,23 @@
+# frozen_string_literal: true
+
 module Locomotive
   module Common
-
-    class DefaultException < ::Exception
+    class DefaultException < StandardError
       attr_accessor :notifier
 
       def initialize(message = nil, parent_exception = nil)
         self.notifier = Locomotive::Common.configuration.notifier
-        self.log_backtrace(parent_exception) if parent_exception
+        log_backtrace(parent_exception) if parent_exception
         super(message)
         init_plugins
       end
 
       def init_plugins
-        begin
-          @plugins = []
-          ::Plugins.constants.each do |name|
-            @plugins << ::Plugins.const_get(name).new(self)
-          end
-        rescue NameError
+        @plugins = []
+        ::Plugins.constants.each do |name|
+          @plugins << ::Plugins.const_get(name).new(self)
         end
+      rescue NameError
       end
 
       protected
@@ -36,20 +35,21 @@ module Locomotive
       attr_accessor :name, :template, :liquid_context
 
       def initialize(exception, name, template, liquid_context)
-        self.name, self.template, self.liquid_context = name, template, liquid_context
-        self.log_page_into_backtrace(exception)
+        self.name = name
+        self.template = template
+        self.liquid_context = liquid_context
+        log_page_into_backtrace(exception)
         super(exception.message)
-        self.set_backtrace(exception.backtrace)
+        set_backtrace(exception.backtrace)
       end
 
       def log_page_into_backtrace(exception)
-        line = self.template.line_offset
+        line = template.line_offset
         line += (exception.respond_to?(:line) ? exception.line || 0 : 0) + 1
-        message = "#{self.template.filepath}:#{line}:in `#{self.name}'"
+        message = "#{template.filepath}:#{line}:in `#{name}'"
         notifier.fatal "[ERROR] #{exception.message} - #{message}\n".red
         exception.backtrace.unshift message
       end
     end
-
   end
 end

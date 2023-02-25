@@ -1,10 +1,17 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
+
+platform :ruby do
+  ruby File.read('.ruby-version').strip
+end
 
 # Specify your gem's dependencies in locomotivecms_common.gemspec
 gemspec
 
-group :test do
-  gem 'rspec', '~> 3.7.0'
+gem 'rubocop'
 
-  gem 'coveralls',                  '~> 0.8.21', require: false
+group :test do
+  gem 'coveralls', '~> 0.8.21', require: false
+  gem 'rspec', '~> 3.12.0'
 end

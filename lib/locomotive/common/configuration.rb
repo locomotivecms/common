@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module Locomotive
   module Common
-
     class Configuration
       attr_accessor :notifier
 
@@ -8,6 +9,5 @@ module Locomotive
         @notifier = Locomotive::Common::Notifier.new
       end
     end
-
   end
 end

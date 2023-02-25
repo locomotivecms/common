@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TrueClass
-  def to_bool() self ; end
+  def to_bool = self
 end

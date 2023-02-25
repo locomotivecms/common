@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'common/version'
 require_relative 'common/core_ext'
 require_relative 'common/attr_extras_ext'
