@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    locomotivecms_common (1.0.0)
-      activesupport (>= 7)
+    locomotivecms_common (0.5.0)
+      activesupport (>= 5)
       attr_extras (~> 7.1.0)
       colorize
       stringex (~> 2.8.5)
@@ -81,6 +81,8 @@ GEM
     unicode-display_width (2.4.2)
 
 PLATFORMS
+  ruby
+  x86_64-darwin-21
   x86_64-darwin-22
 
 DEPENDENCIES
@@ -91,7 +93,7 @@ DEPENDENCIES
   rubocop
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.25
+   2.3.10
