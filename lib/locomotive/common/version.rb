@@ -2,6 +2,6 @@
 
 module Locomotive
   module Common
-    VERSION = '0.5.0'
+    VERSION = '0.6.0.alpha1'
   end
 end
